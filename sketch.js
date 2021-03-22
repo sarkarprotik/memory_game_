@@ -38,14 +38,14 @@ function setup() {
 function mouseClicked() {
   for (let i = 0; i < cards.length; i++) {
     if (cards[i].mouseClick(mouseX, mouseY)) {
-      if (flippedTiles.length < 2 && !cards[i].reveal) {
+      if (flippedCards.length < 2 && !cards[i].reveal) {
         cards[i].setReveal(true)
-        flippedTiles.push(cards[i])
-        if (flippedTiles.length === 2) {
+        flippedCards.push(cards[i])
+        if (flippedCards.length === 2) {
           number_attempts++
-          if (flippedTiles[0].revealImage === flippedTiles[1].revealImage) {
-            flippedTiles[0].isMatch = true
-            flippedTiles[1].isMatch = true
+          if (flippedCards[0].revealImage === flippedCards[1].revealImage) {
+            flippedCards[0].isMatch = true
+            flippedCards[1].isMatch = true
           }
           // Skipping Frames to create a Delay in animation
           delayFrame = frameCount
